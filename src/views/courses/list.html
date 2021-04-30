@@ -1,0 +1,48 @@
+{% extends 'base/base.html' %} {% block tittle %} Users {% endblock %} {% block contents %}
+<head>
+    <style>
+        body{
+            background-image: url({{url_for('static', filename='imgs/regis10.jpg')}})
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'styles/list.css')}}">
+
+</head>
+<div class="overlay">
+    <div class="text-end" style="margin-top: 1rem">
+    <a href="{{ url_for('index') }}" type="submit" class="btn btn-outline-light">
+        Home
+    </a>
+</div>
+    <h1 class="display-2 text-center">Courses List</h1>
+    <br>
+    <table class="table table-responsive table-bordered" style="background-color: whitesmoke" id="students"
+        cellspacing="10px">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Semester</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for c in courses %}
+            <tr>
+                <td>{{ c.0 }}</td>
+                <td>{{ c.1 }}</td>
+                <td>{{ c.2 }}</td>
+                <td><a method="PUT" href="/updatetemp/{{ c.0 }}" class="btn btn-success">
+                        ✏️
+                    </a>
+                    <a method="POST" href="/course/delete/{{ c.0 }}" class="btn btn-danger">
+                        🗑️
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

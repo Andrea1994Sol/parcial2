@@ -1,0 +1,64 @@
+{% extends 'base/base.html' %} {% block tittle %} Sessions {% endblock %} {% block contents %}
+<head>
+    <style>
+        body{
+            background-image: url({{url_for('static', filename='imgs/regis10.jpg')}})
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'styles/student_update.css')}}">
+</head>
+<div class="overlay">
+    <div class="text-end" style="margin-top: 1rem">
+        <a href="{{ url_for('index') }}" type="submit" class="btn btn-outline-light">
+            Home
+        </a>
+    </div>
+
+    <form action="{{ url_for('createSession') }}" method="POST">
+        <div class="con">
+            <header class="head-form">
+                <h1>Sessions Create</h1>
+            </header>
+            <div class="field-set">
+                <label class="label" for="">Courses</label><select class="select" name="course"
+                    method="GET" action="">
+                    <option value="0" selected disabled>Select Course</option>
+                    {% for c in courses %}
+                    <option value="{{ c.1 }}">{{c.1}}</option>
+                    {% endfor %}
+                </select><br>
+                <label class="label" for="">Date</label><input class="form-input" id="txt-input"
+                    type="date" name="date" placeholder=""><br>
+                <label class="label" for="">Start Time</label><select class="select" name="starttime"
+                    method="GET" action="">
+                    <option value="0" selected disabled>Select start time</option>
+                    <option value="06:30">06:30 PM</option>
+                    <option value="07:30">07:30 PM</option>
+                    <option value="08:45">08:45 PM</option>
+                    <option value="09:45">09:45 PM</option>
+                </select><br>
+                <label class="label" for="">End Time</label><select class="select" name="endtime"
+                    method="GET" action="">
+                    <option value="0" selected disabled>Select end time</option>
+                    <option value="07:30">07:30 PM</option>
+                    <option value="08:45">08:45 PM</option>
+                    <option value="09:45">09:45 PM</option>
+                    <option value="10:45">10:45 PM</option>
+                </select><br>
+
+                <div class="text-center" style="width: 400px">
+                    <button type="submit" class="btn btn-light">
+                        Create
+                    </button>
+                    <a href="{{ url_for('listSessionPreview') }}" type="submit" class="btn btn-light">
+                        List
+                    </a>
+                </div>
+            </div>
+        </div>
+    </form>
+    
+</div>
+
+
+{% endblock %}

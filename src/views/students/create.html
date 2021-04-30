@@ -1,0 +1,59 @@
+{% extends 'base/base.html' %} {% block tittle %} Users {% endblock %} {% block contents %}
+
+<head>
+    <style>
+        body{
+            background-image: url({{url_for('static', filename='imgs/regis10.jpg')}})
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'styles/student_create.css')}}">
+</head>
+<body >
+<div class="text-end" style="margin-top: 1rem">
+    <a href="{{ url_for('index') }}" type="submit" class="btn btn-outline-light">
+        Home
+    </a>
+</div>
+<div>
+    <form action="{{ url_for('createStudent') }}" method="POST" >
+        <div class="con">
+            <header class="head-form">
+                <h1>Students Create</h1>
+            </header>
+            <div class="field-set">
+
+                <label class="label" for="">Identificación</label><input class="form-input" id="txt-input"
+                                                                                      type="text" name="uid" placeholder=""><br>
+                <label  class="label" for="">Names</label><input class="form-input" id="txt-input"
+                                                                               type="text" name="names" placeholder=""><br>
+                <label class="label" for="">Last Names</label><input class="form-input" id="txt-input"
+                                                                                    type="text" name="lastnames" placeholder=""><br>
+                <label class="label" for="">Phone</label><input class="form-input" id="txt" type="text"
+                                                                               name="phone" placeholder=""><br>
+                <label class="label" for="">Email</label><input class="form-input" type="text" id="pwd"
+                                                                             name="email" placeholder=""><br>
+                <label class="label" for="">Semester</label><input class="form-input" type="text"
+                                                                                  id="pwd" name="semester" placeholder=""><br>
+                <label class="label" for="">Courses</label><select class="select" name="course" method="GET" action="">
+                <option value="0" selected disabled >Select Course</option>
+                {% for c in courses %}
+                <option value="{{ c.0 }}">{{c.1}}</option>"
+                {% endfor %}
+            </select><br>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-light">
+                        Save
+                    </button>
+                    <a href="{{ url_for('listStudent') }}" type="submit" class="btn btn-light">
+                        List
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</div>
+
+</body>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base/base.html' %} {% block tittle %} Users {% endblock %} {% block contents %}
+<head>
+        <style>
+            body{
+                background-image: url({{url_for('static', filename='imgs/regis10.jpg')}})
+            }
+        </style>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'styles/courses_list.css')}}">
+</head>
+<h1 class=" text-center">Sessions</h1>
+<div class="overlay">
+    <a href="{{ url_for('index') }}" type="submit" class="btn btn-light">
+        Home
+    </a>
+    <a href="{{ url_for('createSessionPreview') }}" class="btn btn-light" type="submit" class="btn btn-primary">
+        Create
+    </a>    
+</div>
+<div class="container">
+    {% for s in sessions %}
+    <div class="container-1">
+        <h1 >{{s.1}}</h1>
+        <label for="">Date</label><p>{{s.2}}</p>
+        <label for="">Start Time</label><p>{{s.3}}</p>
+        <label for="">End Time</label><p>{{s.4}}</p>
+        <a method="POST" href="/session/delete/{{ s.0 }}" class="btn btn-danger">
+            🗑️
+        </a>
+    </div>
+    {% endfor %}
+    
+</div>
+
+{% endblock %}

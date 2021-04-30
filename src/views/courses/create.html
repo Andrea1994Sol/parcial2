@@ -1,0 +1,57 @@
+{% extends 'base/base.html' %} {% block tittle %} Courses {% endblock %} {% block contents %}
+<head>
+    <style>
+        body{
+            background-image: url({{url_for('static', filename='imgs/regis10.jpg')}})
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'styles/student_update.css')}}">
+
+
+</head>
+<div class="overlay">
+    <div class="text-end" style="margin-top: 1rem">
+        <a href="{{ url_for('index') }}" type="submit" class="btn btn-outline-light">
+            Home
+        </a>
+    </div>
+
+    <form action="{{ url_for('createCourse') }}" method="POST">
+        <div class="con">
+            <header class="head-form">
+                <h1 class="display-4 text-center">Courses Create</h1>
+            </header>
+            <div class="field-set">
+                <br>
+                <br>
+                <label style="margin-right: 2.5rem" for="">Names</label><input class="form-input" id="txt-input"
+                    type="text" name="names" placeholder=""><br>
+                <label style="margin-right: 1.5rem" for="">Semester</label><select class="select" name="semester">
+                    <option value="0" selected disabled>Select Semester</option>
+                    <option value="1">1. First</option>
+                    <option value="2">2. Second</option>
+                    <option value="3">3. Third</option>
+                    <option value="4">4. Fourth</option>
+                    <option value="5">5. Fifth</option>
+                    <option value="6">6. Sixth</option>
+                    <option value="7">7. Seventh</option>
+                    <option value="8">8. Eighth</option>
+                    <option value="9">9. Ninth</option>
+                    <option value="10">10. Tenth</option>
+                </select>
+
+
+            </div>
+            <div class="text-center" style="width: 400px">
+                <button type="submit" class="btn btn-light">
+                    Save
+                </button>
+                <a href="{{ url_for('listCourses') }}" type="submit" class="btn btn-light">
+                    List
+                </a>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

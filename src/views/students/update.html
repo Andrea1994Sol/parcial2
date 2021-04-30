@@ -1,0 +1,50 @@
+{% extends 'base/base.html' %} {% block tittle %} Users {% endblock %} {% block contents %}
+<head>
+    <style>
+        body{
+            background-image: url({{url_for('static', filename='imgs/regis10.jpg')}})
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'styles/student_update.css')}}">
+
+
+</head>
+<body>
+<div class="text-end" style="margin-top: 1rem">
+    <a href="{{ url_for('index') }}" type="submit" class="btn btn-outline-light">
+        Home
+    </a>
+</div>
+<div class="overlay">
+
+
+    <form action="{{ url_for('updateStudent') }}" method="PUT">
+        <div class="con">
+            <header class="head-form">
+                <h1 class="display-4 text-center">Update Student</h1>
+            </header>
+            <div class="field-set">
+
+                <label class="label" for="">Id</label><input class="form-input" id="txt-input"
+                                                                            type="text" name="id" placeholder="" value="{{ id }}" disabled><br>
+                <label class="label" for="">Names</label><input class="form-input" id="txt-input"
+                                                                               type="text" name="names" placeholder="" value="{{ names }}"><br>
+                <label class="label" for="">Last Names</label><input class="form-input" id="txt-input"
+                                                                                    type="text" name="lastnames" placeholder="" value="{{ lastnames }}"><br>
+                <label class="label" for="">Phone</label><input class="form-input" id="txt" type="text"
+                                                                               name="phone" placeholder="" value="{{ phone }}"><br>
+                <label class="label" for="">Email</label><input class="form-input" type="text" id="pwd"
+                                                                             name="email" placeholder="" value="{{ email }}"><br>
+                <label class="label" for="">Semester</label><input class="form-input" type="text"
+                                                                                  id="pwd" name="semester" placeholder="" value="{{ semester }}"><br>
+                <div class="col text-center">
+                <button type="submit"  class="btn btn-light text-center">
+                    Update
+                </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+{% endblock %}

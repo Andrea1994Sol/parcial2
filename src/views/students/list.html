@@ -1,0 +1,65 @@
+{% extends 'base/base.html' %} {% block tittle %} Users {% endblock %} {% block contents %}
+<head>
+    <style>
+        body{
+            background-image: url({{url_for('static', filename='imgs/regis10.jpg')}})
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'styles/list.css')}}">
+</head>
+<div class="text-end" style="margin-top: 1rem">
+    <a href="{{ url_for('index') }}" type="submit" class="btn btn-outline-light">
+        Home
+    </a>
+</div>
+<div class="overlay" >
+    <br>
+    <h1 class="display-2 text-center">Students List</h1>
+    <br>
+        <table class="table table-responsive table-bordered" style="background-color: whitesmoke" id="students"
+            cellspacing="10px">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Identificación</th>
+                    <th scope="col">Names</th>
+                    <th scope="col">Lastnames</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Semester</th>
+                    <th scope="col">Course</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for s in students %}
+                <tr>
+                    <td>{{ s.0 }}</td>
+                    <td>{{ s.1 }}</td>
+                    <td>{{ s.2 }}</td>
+                    <td>{{ s.3 }}</td>
+                    <td>{{ s.4 }}</td>
+                    <td>{{ s.5 }}</td>
+                    <td>{{ s.6 }}</td>
+                    <td>{{ s.7 }}</td>
+                    <td><a method="PUT" href="/updatetemp/{{ s.0 }}" class="btn btn-success">
+                        ✏️
+                    </a>
+                    <a method="POST" href="/delete/{{ s.0 }}" class="btn btn-danger">
+                        🗑️
+                    </a>
+                </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</div>
+
+{% endblock %}
+{% block login_css %}
+<style type="text/css">
+    body {
+        background-color:#c8cde0;
+    }
+</style>
+{% endblock %}

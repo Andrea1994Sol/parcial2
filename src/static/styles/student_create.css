@@ -1,0 +1,191 @@
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    background-color: #c4cada;
+}
+.label{
+    width: 90px;
+
+}
+
+.btn{
+    width: 120px;
+    height: 40px;
+
+}
+form {
+    width: 450px;
+    min-height: 400px;
+    height: 620px;
+    border-radius: 5px;
+    margin-left: 30%;
+color: white;
+    box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
+    padding: 2%;
+    backdrop-filter: blur(10px);
+}
+.image{
+    width: 650px;
+    height: 700px;
+}
+
+
+/* form Container */
+form .con {
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+}
+
+/* the header form form */
+header {
+    margin: 2% auto 10% auto;
+    text-align: center;
+}
+
+/* Login title form form */
+header h2 {
+    font-size: 250%;
+    font-family: 'Playfair Display', serif;
+    color: #3e403f;
+}
+
+/*  A welcome message or an explanation of the login form */
+header p {
+    letter-spacing: 0.05em;
+}
+
+/* inputs form  */
+input[class="form-input"] {
+    width: 240px;
+    height: 50px;
+
+    margin-top: 2%;
+    padding: 15px;
+
+    font-size: 16px;
+    font-family: 'Abel', sans-serif;
+    color: #5E6472;
+
+    outline: none;
+    border: none;
+
+    border-radius: 5px 5px 5px 5px;
+    transition: 0.2s linear;
+    margin-left: 3rem;
+
+}
+.select{
+    width: 250px;
+    height: 50px;
+
+    margin-top: 2%;
+    padding: 15px;
+
+    font-size: 16px;
+    font-family: 'Abel', sans-serif;
+    color: #5E6472;
+
+    outline: none;
+    border: none;
+
+    border-radius: 5px 5px 5px 5px;
+    transition: 0.2s linear;
+    margin-left: 3rem;
+}
+
+input[id="txt-input"] {
+    width: 250px;
+}
+
+/* focus  */
+input:focus {
+    transform: translateX(-2px);
+    border-radius: 5px;
+}
+
+input[id="pwd"] {
+    width: 250px;
+}
+
+/* focus  */
+input:focus {
+    transform: translateX(-2px);
+    border-radius: 5px;
+}
+
+input[id="txt"] {
+    width: 250px;
+}
+
+/* focus  */
+input:focus {
+    transform: translateX(-2px);
+    border-radius: 5px;
+    margin-left: 2rem;
+}
+
+/* //////////////////////////////////////////// */
+/* //////////////////////////////////////////// */
+
+/* input[type="text"] {min-width: 250px;} */
+/* buttons  */
+button {
+
+    padding: 0 20px;
+    background: #fff;
+    border-radius: 5px;
+
+    outline: none;
+    border: none;
+
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s linear;
+
+    margin: 10% auto;
+    letter-spacing: 0.05em;
+
+}
+
+/* Submits */
+.submits {
+    width: 48%;
+    display: inline-block;
+    margin-left: 2%;
+}
+
+/*       Forgot Password button FAF3DD  */
+
+/*     Sign Up button  */
+.sign-up {
+    background: #B8F2E6;
+}
+
+
+/* buttons hover */
+button:hover {
+    transform: translatey(3px);
+    box-shadow: none;
+}
+
+/* buttons hover Animation */
+button:hover {
+    animation: ani9 0.4s ease-in-out infinite alternate;
+}
+
+@keyframes ani9 {
+    0% {
+        transform: translateY(3px);
+    }
+
+    100% {
+        transform: translateY(5px);
+    }
+}

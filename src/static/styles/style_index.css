@@ -1,0 +1,88 @@
+{% block login_css %}
+.display-1{
+    margin-top: 100px;
+}
+.row{
+    margin-bottom: 2rem;
+    margin-top: -10rem;
+    margin-left: 1rem;
+}
+.col{
+    height: 300px;
+}
+.p-3-1{
+    height: 300px;
+    background-color: #789397;
+}
+.p-3-2{
+    background-color: #ec7fb5;
+    height: 300px;
+}
+.p-3-3{
+    height: 300px;
+    background-color: #b3b1cd;
+}
+.u-section-1 .u-sheet-1 {
+    min-height: 836px;
+}
+.btn{
+    margin-left: 6.5rem;
+    margin-top: 2rem;
+    width: 100px;
+}
+
+.u-section-1 .u-image-1 {
+    height: 539px;
+    width: 1140px;
+    margin: 40px auto 0;
+}
+@media (max-width: 1199px) {
+    .u-section-1 .u-sheet-1 {
+        min-height: 689px;
+    }
+
+    .u-section-1 .u-image-1 {
+        height: 444px;
+        width: 940px;
+        margin-left: 0;
+    }
+}
+@media (max-width: 991px) {
+    .u-section-1 .u-sheet-1 {
+        min-height: 528px;
+    }
+
+    .u-section-1 .u-image-1 {
+        height: 340px;
+        width: 720px;
+    }
+}
+@media (max-width: 767px) {
+    .u-section-1 .u-sheet-1 {
+        min-height: 396px;
+    }
+
+    .u-section-1 .u-image-1 {
+        height: 327px;
+        margin-right: initial;
+        margin-left: initial;
+        width: auto;
+    }
+
+}
+
+@media (max-width: 575px) {
+    .u-section-1 .u-sheet-1 {
+        min-height: 964px;
+    }
+
+    .u-section-1 .u-image-1 {
+        height: 232px;
+        margin-top: 50px;
+        width: auto;
+        margin-right: initial;
+        margin-left: initial;
+    }
+
+}
+{% endblock %}
